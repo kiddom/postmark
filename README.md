@@ -6,7 +6,7 @@ A Golang package for the using Postmark API.
 
 ### Installation
 
-    go get -u github.com/keighl/postmark
+    go get -u github.com/kiddom/postmark
 
 ### Basic Usage
 
@@ -14,7 +14,7 @@ Grab your [`Server Token`](https://account.postmarkapp.com/servers/XXXX/credenti
 
 ```go
 import (
-    "github.com/keighl/postmark"
+    "github.com/kiddom/postmark"
 )
 
 client := postmark.NewClient("[SERVER-TOKEN]", "[ACCOUNT-TOKEN]")
@@ -26,6 +26,7 @@ email := postmark.Email{
 	HtmlBody: "...",
     TextBody: "...",
 	Tag: "pw-reset",
+	TrackLinks: postmark.NoneTrackLinks,
 	TrackOpens: true,
 }
 
@@ -38,7 +39,7 @@ Swap out HTTPClient for use on Google App Engine:
 
 ```go
 import (
-    "github.com/keighl/postmark"
+    "github.com/kiddom/postmark"
     "google.golang.org/appengine"
     "google.golang.org/appengine/urlfetch"
 )
