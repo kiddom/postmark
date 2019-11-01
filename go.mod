@@ -1,4 +1,4 @@
-module github.com/kiddom/postmark
+module github.com/radim/postmark
 
 go 1.13
 
