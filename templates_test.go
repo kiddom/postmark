@@ -231,6 +231,7 @@ var testTemplatedEmail = TemplatedEmail{
 		},
 	},
 	TrackOpens: true,
+	TrackLinks: HTMLAndTextTrackLinks,
 	Attachments: []Attachment{
 		{
 			Name:        "readme.txt",
