@@ -215,6 +215,11 @@ func (client *Client) SendTemplatedEmail(email TemplatedEmail) (EmailResponse, e
 		Payload:   email,
 		TokenType: server_token,
 	}, &res)
+
+	if res.ErrorCode != 0 {
+		return res, fmt.Errorf(`%v %s`, res.ErrorCode, res.Message)
+	}
+
 	return res, err
 }
 
